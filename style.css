@@ -1,0 +1,503 @@
+/* ===========================
+Reset
+=========================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+/* ===========================
+Body
+=========================== */
+
+body{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:flex-start;
+
+padding:40px;
+
+background:linear-gradient(
+135deg,
+#0f172a,
+#2563eb,
+#38bdf8,
+#7dd3fc);
+
+overflow:auto;
+
+}
+
+/* ===========================
+Animated Background
+=========================== */
+
+.background{
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(255,255,255,.10),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(255,255,255,.08),transparent 35%);
+
+animation:move 15s infinite alternate;
+
+z-index:-1;
+
+}
+
+@keyframes move{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.15);
+
+}
+
+}
+
+/* ===========================
+Container
+=========================== */
+
+.container{
+
+width:1100px;
+
+max-width:100%;
+
+padding:35px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:25px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+}
+
+/* ===========================
+Heading
+=========================== */
+
+.container h1{
+
+text-align:center;
+
+font-size:38px;
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#dbeafe;
+
+margin-bottom:30px;
+
+}
+
+/* ===========================
+Top Bar
+=========================== */
+
+.top-bar{
+
+display:flex;
+
+gap:15px;
+
+margin-bottom:30px;
+
+flex-wrap:wrap;
+
+}
+
+.top-bar input{
+
+flex:1;
+
+padding:15px;
+
+border:none;
+
+outline:none;
+
+border-radius:12px;
+
+font-size:16px;
+
+}
+
+.top-bar button{
+
+padding:15px 25px;
+
+border:none;
+
+border-radius:12px;
+
+background:#22c55e;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.top-bar button:hover{
+
+background:#16a34a;
+
+transform:translateY(-3px);
+
+}
+
+/* ===========================
+Notes Container
+=========================== */
+
+#notesContainer{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fill,minmax(300px,1fr));
+
+gap:20px;
+
+}
+/* ===========================
+Note Card
+=========================== */
+
+.note{
+
+background:rgba(255,255,255,.18);
+
+border-radius:18px;
+
+padding:20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+transition:.3s;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+animation:fadeIn .4s ease;
+
+}
+
+.note:hover{
+
+transform:translateY(-6px);
+
+background:rgba(255,255,255,.24);
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+Title
+=========================== */
+
+.note-title{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+outline:none;
+
+border-radius:10px;
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+/* ===========================
+Content
+=========================== */
+
+.note-content{
+
+width:100%;
+
+height:180px;
+
+padding:12px;
+
+border:none;
+
+outline:none;
+
+border-radius:10px;
+
+resize:none;
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+/* ===========================
+Date
+=========================== */
+
+.note-date{
+
+color:#dbeafe;
+
+font-size:13px;
+
+}
+
+/* ===========================
+Buttons
+=========================== */
+
+.note-buttons{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:10px;
+
+}
+
+.note-buttons button{
+
+flex:1;
+
+padding:10px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#ffffff;
+
+transition:.3s;
+
+}
+
+/* Pin */
+
+.pin{
+
+background:#f59e0b;
+
+}
+
+.pin:hover{
+
+background:#d97706;
+
+}
+
+/* Delete */
+
+.delete{
+
+background:#ef4444;
+
+}
+
+.delete:hover{
+
+background:#dc2626;
+
+}
+
+/* Save */
+
+.save{
+
+background:#22c55e;
+
+}
+
+.save:hover{
+
+background:#16a34a;
+
+}
+
+/* ===========================
+Responsive
+=========================== */
+
+@media(max-width:768px){
+
+.container{
+
+padding:25px;
+
+}
+
+.container h1{
+
+font-size:30px;
+
+}
+
+.top-bar{
+
+flex-direction:column;
+
+}
+
+.top-bar button{
+
+width:100%;
+
+}
+
+#notesContainer{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.container{
+
+padding:20px;
+
+}
+
+.container h1{
+
+font-size:26px;
+
+}
+
+.subtitle{
+
+font-size:14px;
+
+}
+
+.note-title{
+
+font-size:16px;
+
+}
+
+.note-content{
+
+height:150px;
+
+font-size:14px;
+
+}
+
+}
+/* ===========================
+Empty State
+=========================== */
+
+.empty-state{
+
+grid-column:1/-1;
+
+text-align:center;
+
+padding:60px 20px;
+
+color:white;
+
+}
+
+.empty-state h2{
+
+font-size:32px;
+
+margin-bottom:10px;
+
+}
+
+.empty-state p{
+
+color:#dbeafe;
+
+font-size:17px;
+
+}

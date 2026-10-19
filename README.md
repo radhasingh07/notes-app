@@ -28,6 +28,8 @@ Notes-App/
 │── index.html
 │── style.css
 │── script.js
+│──main.png
+│──notes.png
 └── README.md
 ```
 
